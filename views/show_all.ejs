@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./supp/header.ejs')%>
+<body>
+    <%- include('./supp/nav.ejs')%>
+
+    <table  style="display:flex ; justify-content: center;margin-top: 50px;">
+        <tr>
+            <th>الرقم</th>
+            <th>الاسم</th>
+            <th>البريد</th>
+            <th>رقم الهاتف</th>
+            <th>المرحلة التعليمية</th>
+            <th>رقم الهوية</th>
+            <th>تعديل</th>
+            <th>حذف</th>
+        </tr>
+        
+        <%
+        if(user.length!=0){
+        var i=1;
+        user.forEach(function(data){
+        %>
+        <tr style="text-align:center ;">
+            <td><%=i; %></td>
+            <td><%=data.full_name%></td>
+            <td><%=data.email %></td>
+            <td><%=data.phone_number %></td>
+            <td><%=data.step %></td>
+            <td><%=data.persnal_id %></td>
+            <td><a href="/show_all <%= data.id%>">Edit</a></td>
+            <td><a href="/del<%= data.id%>">Delete</a></td>
+        </tr>
+        <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="8" style="text-align:center ;">No Data Found</td>
+            </tr>
+        <% } %>
+    </table>
+    </div>
+
+
+
+</body>
+</html>

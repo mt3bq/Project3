@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./supp/header.ejs')%>
+    
+<body>
+    <%- include('./supp/nav.ejs')%>
+    
+
+
+    <div class="box_style">
+       <div class="bor">
+
+        <h1>تسجيل طالب جديد</h1>
+        <div class="name_style">
+          
+            <form method="post">
+               
+        
+            </div>
+            <div class="info">
+                <input id="first_name" name="Full_name" type="text" placeholder="الاسم ">
+                <input id="id" type="text" name="Persnal_id" placeholder="رقم الهوية">
+                <input id="email" type="text" name="Email" placeholder="االبريد الالكتروني">
+                <input  id="Phone_number" type="text" name="Phone_number" placeholder="  رقم الجوال">
+                <input id="step_learn" type="text" name="Step" placeholder="المرحلة التعليمية">
+            </div>
+            
+            <button  id="bttt" class="sava_btn">اضافة</button>
+            <div class="exxsst">
+                <p style="color:rgb(197, 103, 103) ;">البريد مسخدم من قبل </p>
+            </div>
+            </form>
+        
+        
+
+       </div>
+    </div>
+
+   <script>
+        let btn_1=document.getElementById('bttt');
+      
+       
+       
+      let rel=document.querySelector('.exxsst');
+      let input=document.querySelector('.first_name');
+  
+          btn_1.addEventListener('click',()=>{
+          let value=input.value;
+          if(value.length===0){
+              rel.innerText="الرجاء ادخال قيمة";
+          }else{
+              rel.innerText="";
+          }
+      })
+   </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+        <%- include('./supp/header.ejs')%>
+       
+<body>
+
+
+    <%- include('./supp/nav.ejs')%>
+    <div class="search">
+        <h1>search</h1>
+        <input class="first_input"  type="text" placeholder="بحث عن طالب او مادة او معلم">
+        <div class="bt_style_inedx">
+        <button id="b1" class="but_style">بحث</button>
+        <a href="./show_all"><button  id="b2" class="but_style">عرض الكل</button></a>
+        
+        </div>
+        <div clas="error">
+            <p class="ee"></p>
+   </div>
+        
+    </div>
+
+    <script>
+    
+    let btn_1=document.getElementById('b1');
+  
+    let btn_2=document.getElementById('b2');
+   
+    let rel=document.querySelector('.ee');
+    let input=document.querySelector('.first_input');
+
+        btn_1.addEventListener('click',()=>{
+        let value=input.value;
+        if(value.length==0){
+            rel.innerText="الرجاء ادخال قيمة";
+        }else{
+            rel.innerText="";
+        }
+    })
+    btn_1.addEventListener('click',()=>{
+        let value=input.value;
+        if(value.length==0){
+            rel.innerText="الرجاء ادخال قيمة";
+        }else{
+            rel.innerText="";
+        }
+    })
+    
+    
+
+    
+   
+    </script>
+</body>
+</html>
