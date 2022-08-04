@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('./supp/header.ejs')%>
+    <title><%=title%></title>
 <body>
     <%- include('./supp/nav.ejs')%>
 
@@ -23,6 +24,8 @@
         %>
         <tr style="text-align:center ;">
             <td><%=i; %></td>
+           
+            
             <td><%=data.full_name%></td>
             <td><%=data.email %></td>
             <td><%=data.phone_number %></td>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200&display=swap" rel="stylesheet">
+    <title>Login</title>
+   
+    <style>
+        body{background-color: #2C3333;
+        margin: 0;
+        padding: 0;
+        direction: rtl;
+        font-family: 'Cairo', sans-serif;
+        color: white;
+
+        }
+        .contenr{
+            width: 70%;
+            margin: auto;
+            height: 70vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .login{
+            width: 100%;
+            text-align: center;
+        }
+        .login input{
+            display: flex;
+            margin: auto;
+            border: none;
+            height: 30px;
+            border-radius: 5px;
+            text-align: center;
+           
+            
+            width: 40%;
+        }
+        .login button{
+            width:10%;
+            height:30px;
+            border-radius: 5px;
+            font-size: large;
+            background-color: aliceblue;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenr">
+         <div class="titel">
+            <h1>ادارة المدرسة</h1>
+         </div>
+         <div class="login">
+             <form method="post">
+                 
+                 <input type="text" name="email" placeholder="البريد الالكتروني">
+                 <br>
+               
+                 <input type="password" name="password" placeholder="كلمة المرور">
+                 <br>
+                 <button>دخول</button>
+
+                 <br>
+                 <div clas="error">
+                    <p style=" text-align: center; color:rgb(255, 255, 255) ;"><%=name_eror%></p>
+           </div>
+                 
+             </form>
+
+             
+         </div>
+    </div>
+    
+</body>
+</html>

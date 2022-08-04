@@ -13,21 +13,27 @@
  
          <h1>تسجيل معلم جديد</h1>
          <div class="name_style">
-            
+            <form action="" method="post">
+                <div class="info" style="width: 100%;">
+                    <input type="text" name="Full_name" placeholder="الاسم ">
+                     <input type="text" name="Persanl_id" placeholder="رقم الهوية">
+                     <input type="text" name="Email" placeholder="االبريد الالكتروني">
+                     <input type="text" name="Phone_number" placeholder="  رقم الجوال">
+                     <input type="text" name="Majore" placeholder="التخصص">
+
+                     <button style="margin: auto;" class="sava_btn">اضافة</button>
+                     <br>
+                     <div clas="error">
+                        <p style=" text-align: center; color:rgb(131, 9, 9) ;"><%=name_eror%></p>
+               </div>
+                 </div>
+                 
+                 
+                 
+             </form>
          
          </div>
-         <form action="">
-            <div class="info">
-                <input type="text" name="Full_name" placeholder="الاسم ">
-                 <input type="text" name="Persanl_id" placeholder="رقم الهوية">
-                 <input type="text" name="Email" placeholder="االبريد الالكتروني">
-                 <input type="text" name="Phone_number" placeholder="  رقم الجوال">
-                 <input type="text" name="Majore" placeholder="التخصص">
-             </div>
-             
-             <button class="sava_btn">اضافة</button>
-             
-         </form>
+         
          
          
  

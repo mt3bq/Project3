@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+   <head>
     <%- include('./supp/header.ejs')%>
-    
+    <title><%=t_name %> </title>
+   </head>
 <body>
     <%- include('./supp/nav.ejs')%>
     
@@ -13,7 +15,7 @@
         <h1>تسجيل طالب جديد</h1>
         <div class="name_style">
           
-            <form method="post">
+            <form action="add_new_student" method="post">
                
         
             </div>
@@ -27,7 +29,7 @@
             
             <button  id="bttt" class="sava_btn">اضافة</button>
             <div clas="error">
-                <p class="ee"></p>
+                <p style="color:rgb(131, 9, 9) ;"><%=name_e  %></p>
        </div>
             </form>
         
@@ -38,7 +40,10 @@
 
     <script>
     
-       
+       let btn_save=document.getElementById('bttt');
+
+    
+
        
         
     
