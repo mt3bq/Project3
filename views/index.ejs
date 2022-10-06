@@ -1,58 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-
         <%- include('./supp/header.ejs')%>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" >
         <title></title>
+        <style>
+            body{
+                background-color:#060606;
+            }
+
+          .conntenr_search{
+              width: 80%;
+              margin: auto;
+              
+          }
+          .conntenr_search .box_search{
+              height: 60vh;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+
+          }
+          .conntenr_search .box_search .form_style{
+            
+            width: 80%;
+            
+            
+          }
+          .conntenr_search .box_search .form_style input{
+              width: 80%;
+              height: 44px;
+              border: none;
+              border-radius: 5px;
+              padding-right: 10px;
+              outline: none;
+
+            }
+           
+            .conntenr_search .box_search .form_style .buttn_style{
+               display: flex;
+               justify-content: center;
+               width: 80%;
+               padding-top: 10px;
+               gap: 15px;
+            }
+           
+        
+            .conntenr_search .box_search .form_style .but_style{
+               
+            }
+            .conntenr_search button{
+                width: 150px;
+                height: 50px;
+                border-radius: 7px;
+            }
+
+        </style>
        
 <body>
 
 
     <%- include('./supp/nav.ejs')%>
-    <div class="search">
-        <h1>search</h1>
-        <input class="first_input"  type="text" placeholder="بحث عن طالب او مادة او معلم">
-        <div class="bt_style_inedx">
-        <button id="b1" class="but_style">بحث</button>
-        <a href="./show_all"><button  id="b2" class="but_style">عرض الكل</button></a>
-        
+
+    <div class="conntenr_search">
+        <div class="box_search">
+           
+            <div class="form_style">
+                <form action="" method="get">
+                    <input type="text" name="search" placeholder="بحث عن طالب">
+                    
+                   
+                   
+                   <div class="buttn_style">
+                    <button>بحث</button>
+                    <a href="./show_all"><button  id="b2" class="but_style">عرض الكل</button></a>
+                   </div>
+                </form>
+                <div>
+                    
+                     </div>
+            </div>
         </div>
-        <div clas="error">
-            <p class="ee"></p>
-   </div>
-        
     </div>
-
-
-    <script>
+   
     
-    let btn_1=document.getElementById('b1');
+
   
-    let btn_2=document.getElementById('b2');
-   
-    let rel=document.querySelector('.ee');
-    let input=document.querySelector('.first_input');
+    </div>
+ 
 
-        btn_1.addEventListener('click',()=>{
-        let value=input.value;
-        if(value.length==0){
-            rel.innerText="الرجاء ادخال قيمة";
-        }else{
-            rel.innerText="";
-        }
-    })
-    btn_1.addEventListener('click',()=>{
-        let value=input.value;
-        if(value.length==0){
-            rel.innerText="الرجاء ادخال قيمة";
-        }else{
-            rel.innerText="";
-        }
-    })
-    
-    
-
-    
-   
-    </script>
+ 
 </body>
 </html>

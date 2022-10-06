@@ -1,0 +1,134 @@
+
+   <%- include('./supp/header.ejs')%>
+
+   <style>
+ body{
+   background-color: #51557E;
+ }
+ 
+ 
+ .register{
+   width: 70%;
+   margin: auto;
+   height: 70vh;
+   
+  
+ }
+ .register .box_1{
+   background: #ffffff;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+  
+   padding: 10px;
+   margin-top: 20%;
+   border-radius: 10px;
+   padding: 50px;
+ }
+ .titel{
+   margin-bottom: 20px;
+   color: rgb(0, 0, 0);
+ }
+ .box{
+   width: 100%;
+ }
+ input{
+   background-color: rgb(255, 255, 255);
+   text-align: center;
+   font-size: large;
+ }
+ .box .persnal_d_1{
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   
+ }
+ .box .persnal_d_1 input{
+  width: 49%;
+  padding:10px;
+  border-radius: 5px;
+ }
+ .box .persnal_d_2{
+ width: 100%;
+ display: flex;
+ justify-content: space-between;
+ margin-top: 40px;
+ 
+ }
+ .box .persnal_d_2 input{
+   width: 49%;
+  padding:10px;
+  border-radius: 5px;
+ }
+ .box .persnal_d_3{
+ width: 100%;
+ display: flex;
+ justify-content: center;
+ margin-top: 50px;
+ 
+ }
+ .box .persnal_d_3 input{
+   width: 80%;
+  padding:10px;
+  border-radius: 5px;
+ }
+ .box .btn{
+   width: 100%;
+   margin-top: 20px;
+ }
+ .box .btn button{
+   width: 17%;
+   height: 40px;
+   border: none;
+   border-radius: 5px;
+   color: black;
+   font-size: large;
+   background-color: aliceblue;
+   cursor: pointer;
+ }
+ 
+ 
+ 
+ 
+   </style>
+ <div class="register">
+    
+ 
+   <div class="box_1">
+     <div class="titel">
+       <h1>تعديل طالب </h1>
+     </div>
+        
+       
+          
+     
+          
+               
+        <% user.forEach(function(data){ %> 
+             <div class="box">
+               <form method="post">
+           <div class="persnal_d_1">
+                <input id="first_name" name="Full_name" type="text" placeholder=<%=data.full_name %>  >
+                <input id="id" type="text" name="Persnal_id" placeholder=<%=data.persnal_id %>>
+               </div>
+               <div class="persnal_d_2">    
+                <input id="email" type="text" name="Email" placeholder=<%=data.email %>>
+                <input  id="Phone_number" type="text" name="Phone_number" placeholder=<%=data.phone_number %>>
+                
+               </div> 
+   
+               <div class="persnal_d_3">
+               <input id="step_learn" type="text" name="Step" placeholder=<%=data.step %>>
+             </div>        
+             <div class="btn">
+            <button  id="bttt" class="sava_btn">اضافة</button>
+           </div>
+           </form>
+           </div>
+           <% }) %> 
+   </div>
+         
+      
+ 
+  </div>

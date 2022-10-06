@@ -1,4 +1,5 @@
 const express =require('express');
+//export exoresss from 'express';
 const mysql= require('mysql');
 const connect=require('./db');
 const session= require('express-session');
@@ -64,7 +65,7 @@ app.post('/login',(req,res)=>{
                res.render('login',{name_eror:'خطا في بيانات الدخول'})
            }else{
             req.session.cheek=true;
-            res.render("index")
+            res.render("index",{data:r})
            }
         }else{
             console.log(e);
@@ -82,8 +83,17 @@ app.get('/logout', function(req,res){
 
 
 app.get('/index',cheek,(req,res)=>{
-    
-    res.render('index');
+    let search=req.body.search;
+    let sql='select * from students where full_name="'+search+'"';
+
+    connect.query(sql,(e,r)=>{
+        if(!e){
+            res.render('index',{data:r});
+        }else{
+            console.log(e);
+        }
+    })
+   
 
     
 })
@@ -179,6 +189,8 @@ app.post('/add_matter',(req,res,next)=>{
                         console.log(e);
                     }
                 })
+            }else{
+                res.render('add_matter',{title:'اضافة مادة',name_eror:'  المادة مسجلة'});
             }
         }else{
             connect.log(er)
@@ -269,6 +281,59 @@ app.get('/del:id',(req,res)=>{
     })
     
 })
+let path="/mt3b";
+app.get(path,(req,res)=>{
+
+    res.send('hiyij')
+})
+
+app.get('/edit:id',(req,res)=>{
+    let id=req.params.id;
+    let sql= 'select * from students where id="'+id+'"';
+
+    connect.query(sql,(e,r)=>{
+        if(r.length===1){
+      
+            res.render('edit',{user:r});
+
+        }else{
+            console.log(e);
+        }
+    });
+})
+
+app.post('/edit:id',(req,res,next)=>{
+    let id=req.params.id;
+    let full_name=req.body.Full_name;
+    let email=req.body.Email;
+    let phone_number=req.body.Phone_number;
+    let persnal_id=req.body.Persnal_id;
+    let step=req.body.Step;
+
+    let updeta='update students  set full_name="'+full_name+'",email="'+email+'",phone_number="'+phone_number+'",step="'+step+'",persnal_id="'+persnal_id+'" where id="'+id+'"';
+
+    connect.query(updeta,(e,r)=>{
+        if(!e){
+            
+            if(r.length===0){
+                res.send("Not Fond");
+            }else{
+                res.redirect('show_all');
+            }
+
+            
+        }else{
+
+            console.log(e);
+        }
+    })
+
+   
+    
+})
+
+
+
 
 app.get('*',(req,res)=>{
 

@@ -54,11 +54,12 @@ header .contenr .nav .ul_style a:hover{
   
     
 }
+
 .search h1{
     color: aliceblue;
     text-transform: uppercase
 }
-.search .first_input{
+.search form .first_input{
     width: 70%;
     border-radius: 10px;
     border: none;
